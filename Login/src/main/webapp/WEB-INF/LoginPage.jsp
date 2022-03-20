@@ -69,20 +69,21 @@
 	</ul>
 	<div class="container">
 		<div ID="partTwo">
-			<FORM METHOD="POST">
+			<form method="post" action="/login">
 				<DIV id="loginForm" stsyle="margin-left: 20%;">
 					<img src="/resources/images/profilePic.png" id="profilePic">
 					<H2>تسجيل الدخول</H2>
 					<hr style="margin-bottom: 10%;">
-					<INPUT TYPE="TEXT" NAME='idNumber' SIZE="25" PLACEHOLDER="أدخل اسم المستخدم" ID="useridTxt"
+					<INPUT TYPE="TEXT" NAME='email' SIZE="25" PLACEHOLDER="الرجاء إدخال الإيميل" ID="useridTxt"
 						required>
 					<br>
-					<INPUT TYPE="PASSWORD" NAME='password' SIZE="25" PLACEHOLDER="أدخل كلمة السر" ID="passwordTxt"
+					<INPUT TYPE="PASSWORD" NAME='password' SIZE="25" PLACEHOLDER="الرجاء إدخال كلمة السر" ID="passwordTxt"
 						required>
 					<br>
+					<p><c:out value="${error}" /></p>
 					<INPUT TYPE="SUBMIT" VALUE="تسجيل الدخول" NAME="submit" class="ButtonStyle">
 					<p class="register-text" style="margin-top: 5%;">هل تمتلك حساب ؟<a
-							href="registrationPage.html">&nbsp إنشاء حساب </a></p>
+							href="/registration">&nbsp إنشاء حساب </a></p>
 				</DIV>
 			</FORM>
 		</div>

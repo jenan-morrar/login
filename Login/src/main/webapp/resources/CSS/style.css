@@ -17,8 +17,9 @@ body{
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }
-#useridTxt{
-	background-image: url('/resources/images/user.png');
+#useridTxt{ 
+  /*background-image: url('/resources/images/user.png');*/
+    background-image: url('/resources/images/email.png');
   background-position: right 3% bottom 40%;
   position: left;
   text-align: center;
@@ -98,7 +99,7 @@ body{
   background-repeat: no-repeat;
 }
 
-#cpassword{
+#passwordConfirmation{
   background-image: url('/resources/images/cPassword.png');
   background-position: right 3% bottom 40%;
   position: left;

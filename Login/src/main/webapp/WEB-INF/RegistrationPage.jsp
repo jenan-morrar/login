@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
 <!DOCTYPE html>
 <html>
 
@@ -70,29 +71,30 @@
 
 		<div ID="partTwo">
 			<main ID="registerContainer">
-				<FORM METHOD="POST">
+			
+				<form:form method="POST" action="/registration" modelAttribute="user">
 					<DIV id="registerForm" stsyle="margin-left: 20%;">
 						<img src="/resources/images/registerIcon.png" id="RegisterPic">
 						<H2>إنشاء حساب</H2>
 						<hr style="margin-bottom: 2%;">
 						<div id="firstRow">
-							<INPUT TYPE="TEXT" NAME='username' SIZE="25" PLACEHOLDER="أدخل اسم المستخدم"
-								CLASS="userInput" ID="username" minLength="3" maxlength="20" required>
-							<INPUT TYPE="EMAIL" NAME='email' SIZE="25" PLACEHOLDER="أدخل ايميل المستخدم"
-								CLASS="userInput" ID="email" required>
-							<INPUT TYPE="TEXT" NAME='mobileNum' SIZE="25" PLACEHOLDER="أدخل رقم الهاتف"
-								CLASS="userInput" ID="mobileNum" required>
-							<INPUT TYPE="PASSWORD" NAME='password' SIZE="25" PLACEHOLDER="أدخل كلمة السر"
-								CLASS="userInput" ID="password" pattern="^[0-9][A-Za-z0-9]{4,13}[a-z]$" required>
-							<INPUT TYPE="PASSWORD" NAME='cpassword' SIZE="25" PLACEHOLDER="التأكد من كلمة السر"
-								CLASS="userInput" ID="cpassword" required>
-							<INPUT TYPE="SUBMIT" VALUE=" إنشاء حساب" NAME="submit" class="ButtonStyle"
+							<form:input TYPE="TEXT" NAME='username' SIZE="25" PLACEHOLDER="أدخل اسم المستخدم"
+								CLASS="userInput" ID="username" minLength="3" maxlength="20" path="username"/>
+							<form:input TYPE="EMAIL" NAME='email' SIZE="25" PLACEHOLDER="أدخل ايميل المستخدم"
+								CLASS="userInput" ID="email" path="email"/>
+							<form:input TYPE="TEXT" NAME='mobileNum' SIZE="25" PLACEHOLDER="أدخل رقم الهاتف"
+								CLASS="userInput" ID="mobileNum" path="mobileNum"/>
+							<form:password PLACEHOLDER="أدخل كلمة السر" SIZE="25" CLASS="userInput" ID="password" path="password"/>
+							<form:password PLACEHOLDER="التأكد من كلمة السر" SIZE="25" CLASS="userInput" ID="passwordConfirmation" path="passwordConfirmation"/>
+							
+							<input TYPE="SUBMIT" VALUE=" إنشاء حساب" NAME="submit" class="ButtonStyle"
 								style="margin-left:27%;margin-top:1%;">
+							<p><form:errors path="user.*"/></p>
 						</div>
-						<p class="register-text" id="loginText" style="margin-top: 1%;">هل تمتلك حساب ؟<a href="loginPage.html">&nbsp تسجيل
+						<p class="register-text" id="loginText">هل تمتلك حساب ؟<a href="/login">&nbsp تسجيل
 								الدخول</a></p>
 					</DIV>
-				</FORM>
+				 </form:form>
 			</main>
 		</div>
 	</div>
