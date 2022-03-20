@@ -23,7 +23,6 @@ public class User {
     
     @Email(message="Email must be valid")
     private String email;
-    private String username;
     private String mobileNum;
 
     @Size(min=5, message="Password must be greater than 5 characters")
@@ -37,11 +36,10 @@ public class User {
     public User() {
     }
     
-    public User(Long id, String email,String username,String mobileNum, String password, String passwordConfirmation) {
+    public User(Long id, String email,String mobileNum, String password, String passwordConfirmation) {
 		super();
 		this.id = id;
 		this.email = email;
-		this.username =  username;
 		this.mobileNum = mobileNum;
 		this.password = password;
 		this.passwordConfirmation = passwordConfirmation;
@@ -61,14 +59,6 @@ public class User {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-    
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
 	}
 
 	public String getMobileNum() {

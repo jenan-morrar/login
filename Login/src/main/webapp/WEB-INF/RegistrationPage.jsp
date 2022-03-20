@@ -71,25 +71,23 @@
 
 		<div ID="partTwo">
 			<main ID="registerContainer">
-			
 				<form:form method="POST" action="/registration" modelAttribute="user">
 					<DIV id="registerForm" stsyle="margin-left: 20%;">
 						<img src="/resources/images/registerIcon.png" id="RegisterPic">
 						<H2>إنشاء حساب</H2>
 						<hr style="margin-bottom: 2%;">
 						<div id="firstRow">
-							<form:input TYPE="TEXT" NAME='username' SIZE="25" PLACEHOLDER="أدخل اسم المستخدم"
-								CLASS="userInput" ID="username" minLength="3" maxlength="20" path="username"/>
+						<p class="par"><form:errors path="email" class="error"/></p>
 							<form:input TYPE="EMAIL" NAME='email' SIZE="25" PLACEHOLDER="أدخل ايميل المستخدم"
 								CLASS="userInput" ID="email" path="email"/>
 							<form:input TYPE="TEXT" NAME='mobileNum' SIZE="25" PLACEHOLDER="أدخل رقم الهاتف"
 								CLASS="userInput" ID="mobileNum" path="mobileNum"/>
+						   <p class="par"><form:errors path="password" class="error"/></p>
 							<form:password PLACEHOLDER="أدخل كلمة السر" SIZE="25" CLASS="userInput" ID="password" path="password"/>
+							<p class="par"><form:errors path="passwordConfirmation" class="error"/></p>
 							<form:password PLACEHOLDER="التأكد من كلمة السر" SIZE="25" CLASS="userInput" ID="passwordConfirmation" path="passwordConfirmation"/>
-							
 							<input TYPE="SUBMIT" VALUE=" إنشاء حساب" NAME="submit" class="ButtonStyle"
 								style="margin-left:27%;margin-top:1%;">
-							<p><form:errors path="user.*"/></p>
 						</div>
 						<p class="register-text" id="loginText">هل تمتلك حساب ؟<a href="/login">&nbsp تسجيل
 								الدخول</a></p>
